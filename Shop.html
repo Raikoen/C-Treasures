@@ -1,7 +1,7 @@
 <!--
 	
 	Author: Kyle Christian Cole
-	Document: Home.html
+	Document: Shop.html
 	Project: C-Treasures
 	Course: COMP 424 - Client-Side Web Design
 	
@@ -24,8 +24,6 @@
 			https://www.w3schools.com/howto/howto_css_search_button.asp
 		Responsive Website Example
 			https://www.w3schools.com/howto/howto_css_example_website.asp 
-		Gloeing Text Effect
-			https://codepen.io/ryancolgin/pen/IBjla 
 -->
 
 <html>
@@ -55,8 +53,7 @@
 					
 			#navbar
 			{
-				
-				left: 200px;
+				margin-left: 200px;
 				position: fixed;
 				display: flex;
 				justify-content: flex-start;
@@ -64,7 +61,6 @@
 				width: 100%;
 				max-height: 60px;
 			}
-			
 			.nav-link
 			{
 				text-decoration: none;
@@ -83,6 +79,7 @@
 			{
 				max-height: 300px;
 				max-width: 200px;
+				
 			}
 
 			.sideMenu 
@@ -104,25 +101,21 @@
  
 			.sideMenu a.active 
 			{
-  				background-color: #33ccff;
- 				color: white;
+  				background-color: cyan;
+				color: blue;
 			}
-
-			/*
-			background-color: #009999;
-  				color: white;
-  			*/
 
 			.sideMenu a:hover:not(.active) 
 			{
-				background-color: cyan;
+				background-color: #b3e6ff;
 				text-decoration: underline;
   				color: blue;
-  				text-shadow:0px 0px 60px blue;
-  				-moz-transition: all 0.4s ease-in;
-  				-o-transition: all 0.4s ease-in;
-  				-webkit-transition: all 0.4s ease-in;
-  				transition: all 0.4s ease-in;
+			}
+
+			#sectionHeading
+			{
+				font-family: 'Courgette', cursive;
+				margin-top: 60px;
 			}
 
 			div.pageContent
@@ -140,6 +133,7 @@
     				width: 100%;
     				height: auto;
    					position: relative;
+   					margin-top: 0;
  				}
   				
   				div.pageContent {margin-left: 30px}
@@ -152,17 +146,17 @@
   				#header
 				{
 					background-color: rgb(0, 230, 230);
-					position: relative;
+					position: fixed;
 					width: 100%;
 				}
 
   				#navbar
 				{
-
 					position: relative;
 					background-image: linear-gradient(#80dfff, #0086b3);
 					width: 100%;
 					max-height: 60px;
+					margin-left: 0;
 				}
 
 				#navbar a
@@ -182,38 +176,78 @@
 
 			}
 
-			@media screen and (max-width: 400px) 
-			{
-  				
-  				.sideMenu a 
-  				{
-    				text-align: center;
-    				float: none;
-  				}
-			}
-
-			#products
-			{
-				max-width: 900px;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-			}
-	
 			.categories:hover
 			{
 				transform: translateY(8px);
 			}
 
-
-
 			* 
 			{ box-sizing: border-box; }
 
-			.productList
-			{
-				margin-left: 20px;
-			}
+
+
+.product-filter {
+  display: flex;
+}
+.product-filter h1 {
+  flex-grow: 1;
+}
+.sort {
+  display: flex;
+}
+.collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  flex: 1 16%;
+}
+
+.product-image img {
+	padding: 10px;
+  max-width: 100%;
+}
+.product-info {
+	margin-left: 10px;
+  margin-top: auto;
+}
+@media (max-width: 920px) {
+  .product-card {
+    flex: 1 21%;
+  }
+  /* Select the first two */
+.products .product-card:first-child, 
+.products .product-card:nth-child(2) {
+  flex: 2 46%;
+}
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 46%;
+  }
+}
+@media (max-width: 480px) {
+  .product-filter {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .product-filter {
+    flex-direction: column;
+  }
+  .sort {
+    align-self: flex-start;
+  }
+}
+/* SLIDE SHOW */
+/*
+
 
 
 .column {
@@ -234,16 +268,12 @@
     width: 100%;
   }
 }
-			#sectionHeading
-			{
-				font-family: 'Courgette', cursive;
-			}
+			
 
 			.mySlides {display: none;}
 img {vertical-align: middle;}
 
-/* SLIDE SHOW */
-/*
+
 .slideshow-container {
   max-width: 500px;
   position: relative;
@@ -315,21 +345,24 @@ img {vertical-align: middle;}
 				<a class="nav-link" href="#">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
-
 			</nav>
 		</div>
 		<div class="sideMenu">
 			<img id="banner" src="banner.jpg"/>
-			<a style="font-size: 1.5rem; font-weight: bold" class="active">Shop</a>
-			<a class="productList" href="#">All Products</a>
+			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
+ 				color: white; text-decoration: none" >Shop</a>
+			<a class="active" href="#">All Products</a>
   			<a class="productList" href="#">Bracelets</a>
   			<a class="productList" href="#">Earrings</a>
   			<a class="productList" href="#">Pendants</a>
   			<a class="productList" href="#">Loom Patterns</a>
 		</div>
 
+
+
 	<div class="pageContent">
-  	<center>
+ <h1 id="sectionHeading">All Products</h1>
+
 
 	<!--SLIDE SHOW CONTENTS -->
 	<!--
@@ -395,189 +428,164 @@ function showSlides() {
 </script>
 -->
 
+ 
+			<nav class="product-filter">
 
 
-			<h1 style="margin-top: 60px" id="sectionHeading">Best Sellers</h1>
+  <div class="sort">
 
-			<div class="row">
-  				<div class="column">
-    				<a target="_blank" href="#">
-						<img class="categories" src="https://i.etsystatic.com/6714821/d/il/2026e4/819361227/il_340x270.819361227_bpro.jpg?version=1"
-							alt="Bracelets"
-							style="width: 100%">
-						<p>Bracelets</p>
-					</a>
-  				</div>
+    <div class="collection-sort">
+      <label>Filter by:</label>
+      <select>
+        <option value="/">All Products</option>
+        <option value="">Bracelets</option>
+        <option value="">Earrings</option>
+        <option value="">Pendants</option>
+        <option value="">Loom Patterns</option>
+        <option value="">Holiday Specials</option>
+      </select>
+    </div>
 
-  				<div class="column">
-    				<a target="_blank" href="#">
-						<img class="categories" src="https://i.etsystatic.com/6714821/c/1893/1503/0/739/il/9dc2c7/1272126961/il_340x270.1272126961_fr1c.jpg"
-							alt="Earrings"
-							style="width: 100%">
-						<p>Earrings</p>
-					</a>
-  				</div>
+    <div class="collection-sort">
+      <label>Sort by:</label>
+      <select>
+        <option value="/">Price</option>
+        <option value="">Color</option>
+      </select>
+    </div>
 
-  				<div class="column">
-    				<a target="_blank" href="#">
-						<img class="categories" src="https://i.etsystatic.com/6714821/d/il/e9d0ce/821529445/il_340x270.821529445_8c3z.jpg?version=0"
-							alt="Pendants"
-							style="width: 100%">
-						<p>Pendants</p>
-					</a>
-  				</div>
-
-  				<div class="column">
-    				<a target="_blank" href="#">
-						<img class="categories" src="https://i.etsystatic.com/6714821/d/il/5a3113/2785794756/il_340x270.2785794756_dkx4.jpg?version=0"
-							alt="Loom Patterns"
-							style="width: 100%">
-						<p>Loom Patterns</p>
-					</a>
-  				</div>
-
-
-  				<div class="column">
-    				<a target="_blank" href="#">
-						<img class="categories" src="https://i.etsystatic.com/6714821/d/il/894c24/851803810/il_340x270.851803810_sx58.jpg?version=1"
-							alt="Holiday Specials"
-							style="width: 100%">
-						<p>Holiday Specials</p>
-					</a>
-  				</div>
-			</div>
-	</center>
-</div>
-
-<!--
-		<div id="wrap-page">
-		
-			<header id="header">
-				<nav id="nav-bar">
-					<img src="banner.png"></img>
-					<a class="nav-link" href="#">Shop</a>
-					<a class="nav-link" href="About.html">About</a>
-					<a class="nav-link" href="#">Contact</a>
-					<a class="nav-link" href="#">Events</a>
-					<img alt="Cart" src="https://image.flaticon.com/icons/png/512/126/126083.png"></img>
-				</nav>	
-			</header>
-		<section id="slideshow">
-		
-<div class="slideshow-container">
-
- Full-width images with number and caption text 
-  <div class="mySlides fade">
-    <img src="https://i.etsystatic.com/6714821/d/il/2026e4/819361227/il_340x270.819361227_bpro.jpg?version=1" style="width:100%">
   </div>
 
-  <div class="mySlides fade">
-    <img src="https://i.etsystatic.com/6714821/c/1893/1503/0/739/il/9dc2c7/1272126961/il_340x270.1272126961_fr1c.jpg" style="width:100%">
+</nav>
+
+<section class="products">
+
+  <!-- It's likely you'll need to link the card somewhere. You could add a button in the info, link the titles, or even wrap the entire card in an <a href="..."> -->
+
+  <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0">
+    </div>
+    <div class="product-info">
+      <h5>Red, White, & Black Loom Bracelet</h5>
+      <h6>$24.00</h6>
+    </div>
   </div>
 
-  <div class="mySlides fade">
-    <img src="https://i.etsystatic.com/6714821/d/il/e9d0ce/821529445/il_340x270.821529445_8c3z.jpg?version=0" style="width:100%">
+  <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/1834/1456/0/685/il/a4a54c/1224896936/il_340x270.1224896936_yivt.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Fancy Jasper Dangle Earrings</h5>
+      <h6>$24.00</h6>
+    </div>
   </div>
-</div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/f15ac9/874707113/il_340x270.874707113_m0qk.jpg?version=0">
+    </div>
+    <div class="product-info">
+      <h5>Floral Sterling Silver Bezel Lapis Lazuli Stone Pendant</h5>
+      <h6>$72.00</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/5a3113/2785794756/il_340x270.2785794756_dkx4.jpg?version=0">
+    </div>
+    <div class="product-info">
+      <h5>Pathways Loom Pattern</h5>
+      <h6>$4.95</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/2f296d/1372379045/il_340x270.1372379045_df8z.jpg?version=1">
+    </div>
+    <div class="product-info">
+      <h5>Emerald Green Swarovski Xmas Earrings</h5>
+      <h6>$24.00</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/1043/829/1127/0/il/3577b8/1182932938/il_340x270.1182932938_kl9v.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Loom Bracelet</h5>
+      <h6>$79.00</h6>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/1001/795/0/573/il/1638da/1103279710/il_340x270.1103279710_2l27.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Picasso Mint, Tan, & Bronze Elinor Dangle Earrings</h5>
+      <h6>$24.00</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/2519/2000/0/560/il/3b98d1/1501784133/il_340x270.1501784133_mk9o.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Sparkly Wheel Pendant</h5>
+      <h6>$56.00</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/934f09/1474311644/il_340x270.1474311644_oou6.jpg?version=0">
+    </div>
+    <div class="product-info">
+      <h5>Plaid Chevron Tutorial</h5>
+      <h6>$4.95</h6>
+    </div>
+  </div>
+
+   <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/d/il/58e37c/1372379489/il_340x270.1372379489_ja9v.jpg?version=1">
+    </div>
+    <div class="product-info">
+      <h5>Red Swarovski Xmas Earrings</h5>
+      <h6>$24.00</h6>
+    </div>
+  </div>
+
+    <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/1021/811/1330/0/il/4252dc/1237292894/il_340x270.1237292894_3r3l.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Purple & White Loom Bracelet</h5>
+      <h6>$24.00</h6>
+    </div>
+  </div>
+
+    <div class="product-card">
+    <div class="product-image">
+      <img class="categories" src="https://i.etsystatic.com/6714821/c/1298/1031/0/432/il/01a359/1091132480/il_340x270.1091132480_qd8r.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Picasso Blue Turquoise & Bronze Elinor Dangle Earrings</h5>
+      <h6>$24.00</h6>
+    </div>
+  </div>
+
 </section>
-<br>
 
-			<script>
-				var slideIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-			</script>
-
-			
-			<center>
-
-			<h2>Categories</h2>
-
-			<section id="products">
-			    <a target="_blank" href="Bracelets.html">
-					<img class="categories"
-						src="https://i.etsystatic.com/6714821/d/il/2026e4/819361227/il_340x270.819361227_bpro.jpg?version=1"
-						alt="Bracelets">
-					<p class="category-name">Bracelets</p>
-				</a>
-
-
-				<a target="_blank" href="#">
-					<img class="categories"
-						src="https://i.etsystatic.com/6714821/c/1893/1503/0/739/il/9dc2c7/1272126961/il_340x270.1272126961_fr1c.jpg"
-						alt="Earrings">
-					<p class="category-name">Earrings</p>
-				</a>
-					
-				<a target="_blank" href="#">
-					<img class="categories"
-						src="https://i.etsystatic.com/6714821/d/il/e9d0ce/821529445/il_340x270.821529445_8c3z.jpg?version=0"
-						alt="Pendants">
-					<p class="category-name">Pendants</p>
-				</a>
-				
-				<a target="_blank" href="#">
-					<img class="categories"
-						src="https://i.etsystatic.com/6714821/d/il/5a3113/2785794756/il_340x270.2785794756_dkx4.jpg?version=0"
-						alt="Loom Patterns">
-					<p class="category-name">Loom Patterns</p>
-				</a>
-				
-				<a target="_blank" href="#">
-					<img class="categories"
-						src="https://i.etsystatic.com/6714821/d/il/894c24/851803810/il_340x270.851803810_sx58.jpg?version=1"
-						alt="Holiday Specials"><br>
-					<p class="category-name">Holiday Specials</p>
-				</a>
-			</section>
-
-			</center>
-			
 		
-			<section id="deals">
-				<center><h2>Deals</h2></center>
-				<table id="product-table">
-					<tr id="table-heading">	
-						<th>Price</th>
-						<th>Print Size</th>
-						<th>Frame Option</th>
-						<th>Shipping Option</th>
-					</tr>
-					
-					<tr>
-						<td>$30</td>
-						<td>24 x 36</td>
-						<td>Custom frame included</td>
-						<td>UPS Shipping</td>
-					</tr>
-					
-					<tr>
-						<td>$15</td>
-						<td>16 x 20</td>
-						<td>Standard frame</td>
-						<td>UPS Shipping</td>
-					</tr>
-					
-					<tr>
-						<td>$10</td>
-						<td>8 x 10</td>
-						<td>No frame</td>
-						<td>Stadard Mail</td>
-					</tr>
-				</table>
-			</section>
-		
+<!--
 			<footer id="footer">
 				<p id="copyright">&copy; Kyle Cole, June 2020</p>
 			</footer>
