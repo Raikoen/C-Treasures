@@ -80,13 +80,10 @@
 
 			.sideMenu 
 			{
-  				margin: 0;
   				padding: 0;
   				width: 200px;
-  				background-color: #f1f1f1;
+  				background-color: #e6f9ff;
   				position: fixed;
-  				height: 100%;
-  				overflow: auto;
 			}
 
 			.sideMenu a 
@@ -99,14 +96,15 @@
  
 			.sideMenu a.active 
 			{
-  				background-color: #4CAF50;
- 				color: white;
+  				background-color: cyan;
+ 				color: blue;
 			}
 
 			.sideMenu a:hover:not(.active) 
 			{
-  				background-color: #555;
-  				color: white;
+  				background-color: #b3e6ff;
+				text-decoration: underline;
+  				color: blue;
 			}
 
 			div.pageContent
@@ -123,6 +121,7 @@
     				width: 100%;
     				height: auto;
    					position: relative;
+					margin-top: 0;
  				}
   				.sideMenu a {float: left;}
   				div.pageContent {
@@ -381,6 +380,7 @@ img {vertical-align: middle;}
 			<img id="banner" src="banner.jpg"/>
 			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
  				color: white; text-decoration: none" >Home</a>
+				 <a class="nav-link" href="#">Sign in</a>
 		</div>
 
 	<div class="pageContent">
