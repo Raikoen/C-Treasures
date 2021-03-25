@@ -1,0 +1,377 @@
+<!--
+	
+	Author: Kyle Christian Cole
+	Document: ProductPage.html
+	Project: C-Treasures
+	Course: COMP 424 - Client-Side Web Design
+	
+	Sources	
+		Background Color Picker
+			https://www.w3schools.com/colors/colors_picker.asp
+		Web Portfolio
+			https://codepen.io/kyle_cole/full/yLeoaJO
+		Product Page example
+      https://designmodo.com/create-product-page/
+
+		Side Menu Example
+			https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
+			
+		Noto Sans Font
+			https://fonts.google.com/specimen/Noto+Sans?sidebar.open&selection.family=Noto+Sans
+		Courgette Font
+			https://fonts.google.com/specimen/Courgette?preview.text_type=custom
+		Search Button/Bar
+			https://www.w3schools.com/howto/howto_css_search_button.asp
+		Responsive Website Example
+			https://www.w3schools.com/howto/howto_css_example_website.asp 
+-->
+
+<html>
+	<head>
+		<title>Red, White, & Black Loom Bracelet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+			
+			body
+			{
+				margin: 0;
+				font-family: 'Noto Sans', sans-serif;
+			}
+
+
+			#header
+			{
+				background-color: rgb(0, 230, 230);
+				position: fixed;
+				top: 0;
+				display: flex;
+				width: 100%;
+			}
+					
+			#navbar
+			{
+				margin-left: 200px;
+				position: fixed;
+				display: flex;
+				justify-content: flex-start;
+				background-image: linear-gradient(#80dfff, #0086b3);
+				width: 100%;
+				max-height: 60px;
+			}
+			.nav-link
+			{
+				text-decoration: none;
+				color: white;
+				padding: 1rem;
+				display: flex;
+				margin-right: 1rem;
+			}
+			.nav-link:hover
+			{
+				background-color: cyan;
+				color: blue;
+			}
+
+			#banner
+			{
+				max-height: 300px;
+				max-width: 200px;
+				
+			}
+
+			.sideMenu 
+			{
+  				padding: 0;
+  				width: 200px;
+  				background-color: #e6f9ff;
+  				position: fixed;
+  				
+			}
+
+			.sideMenu a 
+			{
+  				display: block;
+  				color: black;
+  				padding: 16px;
+  				text-decoration: none;
+			}
+ 
+			.sideMenu a.active 
+			{
+  				background-color: cyan;
+				color: blue;
+			}
+
+			.sideMenu a:hover:not(.active) 
+			{
+				background-color: #b3e6ff;
+				text-decoration: underline;
+  				color: blue;
+			}
+
+			#sectionHeading
+			{
+				font-family: 'Courgette', cursive;
+				margin-top: 60px;
+			}
+
+			div.pageContent
+			{
+		
+  				margin-left: 200px;
+  				padding: 1px 16px;
+  				height: 1000px;
+			}
+
+			@media screen and (max-width: 700px) 
+			{
+  				.sideMenu
+  				{
+    				width: 100%;
+    				height: auto;
+   					position: relative;
+   					margin-top: 0;
+ 				   }
+  				
+  				div.pageContent {margin-left: 30px}
+
+  				#banner
+  				{
+  					display: none;
+  				}
+
+  				#header
+				{
+					background-color: rgb(0, 230, 230);
+					position: fixed;
+					width: 100%;
+				}
+
+  				#navbar
+				{
+					position: relative;
+					background-image: linear-gradient(#80dfff, #0086b3);
+					width: 100%;
+					max-height: 60px;
+					margin-left: 0;
+				}
+
+				#navbar a
+				{
+					text-decoration: none;
+					color: white;
+					padding: 1rem;
+					margin-right: 1rem;
+				}
+
+				#navbar a:hover
+				{
+					background-color: cyan;
+					color: blue;
+				}
+
+        #sectionHeading
+      {
+        font-family: 'Courgette', cursive;
+        margin-top: 12px;
+         }
+
+
+			}
+
+			* 
+			{ box-sizing: border-box; }
+
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  float: left;
+}
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+
+}
+ 
+.right-column {
+  width: 35%;
+  margin-top: 60px;
+}
+/* Left Column */
+.left-column img {
+  width: 100%;
+  position: relative;
+  padding-top: 0;
+  padding-left: 0px;
+  padding-right: 30px;
+}
+ 
+/* Product Description */
+.product-description {
+  margin-top: -40px;
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: center;
+}
+ 
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;
+}
+ 
+.cart-btn {
+  display: inline-block;
+  background-color: #33ccff;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+ 
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+ 
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+    .product-description
+  {
+    margin-top: -80px;
+  }
+}
+ 
+@media (max-width: 535px) {
+  .left-column img {
+    width: 100%;
+    height: auto;
+    top: -65px;
+  }
+
+  .product-description
+  {
+    margin-top: -80px;
+  }
+}
+		</style>
+	</head>
+	
+	<body>
+		<div>
+			<nav id="navbar">
+				<a class="nav-link" href="Shop.html">Home</a>
+				<a class="nav-link" href="About.html">About</a>
+				<a class="nav-link" href="#">Events</a>
+				<a class="nav-link" href="#">Contact</a>
+			</nav>
+		</div>
+		<div class="sideMenu">
+			<img id="banner" src="banner.jpg"/>
+			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
+ 				color: white; text-decoration: none" >Shop</a>
+			<a class="active" href="#">All Products</a>
+  			<a class="productList" href="#">Bracelets</a>
+  			<a class="productList" href="#">Earrings</a>
+  			<a class="productList" href="#">Pendants</a>
+  			<a class="productList" href="#">Loom Patterns</a>
+		</div>
+
+
+
+	<div class="pageContent">
+ <h1 id="sectionHeading">Red, White, & Black Loom Bracelet</h1>
+ 
+		<main class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+   <img id="productImage" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0">
+  </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>Loom Bracelet</span>
+      <h1>Red, White, & Black</h1>
+      <p>
+        <ul>
+          <li>Handmade item</li>
+          <li>Bracelet length: 7.0 Inches</li>
+          <li>Bracelet width: .375 Inches</li>
+          <li>Materials: Glass</li>
+          <li>Closure: Lobster Claw</li>
+          <li>Adjustable</li>
+          <li>Style: Boho & Hippie</li>
+        </ul>
+
+        Bold. Measures 7.0 inches. Silver toned Lobster clasp. Using the extension chain it goes up to 9 inches 
+      </p>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>$24.00</span>
+      <a href="#" class="cart-btn">Add to cart</a>
+    </div>
+  </div>
+</main>
+<!--
+			<footer id="footer">
+				<p id="copyright">&copy; Kyle Cole, June 2020</p>
+			</footer>
+		-->
+
+	</div>
+	</body>
+</html>
