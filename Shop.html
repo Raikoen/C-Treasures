@@ -20,10 +20,12 @@
 			https://fonts.google.com/specimen/Noto+Sans?sidebar.open&selection.family=Noto+Sans
 		Courgette Font
 			https://fonts.google.com/specimen/Courgette?preview.text_type=custom
-		Search Button/Bar
-			https://www.w3schools.com/howto/howto_css_search_button.asp
+		Animated Search Bar
+			https://www.w3schools.com/howto/howto_css_animated_search.asp 
 		Responsive Website Example
 			https://www.w3schools.com/howto/howto_css_example_website.asp 
+		Free Cart Image
+			https://www.freeiconspng.com/img/28356 
 -->
 
 <html>
@@ -80,6 +82,12 @@
 				max-height: 300px;
 				max-width: 200px;
 				
+			}
+			#cartImg
+			{
+				margin-left: 10px;
+				max-width: 30px;
+				max-height: 30px;
 			}
 
 			.sideMenu 
@@ -184,7 +192,7 @@
 			* 
 			{ box-sizing: border-box; }
 
-
+/* Product images & dimensions */
 
 .product-filter {
   display: flex;
@@ -220,11 +228,7 @@
   .product-card {
     flex: 1 21%;
   }
-  /* Select the first two */
-.products .product-card:first-child, 
-.products .product-card:nth-child(2) {
-  flex: 2 46%;
-}
+ 
 }
 
 @media (max-width: 600px) {
@@ -245,6 +249,28 @@
     align-self: flex-start;
   }
 }
+
+input[type=text] {
+  color: black;
+  background-color: #f2f2f2;
+  border-color: cyan;
+  width: 125px;
+  height: 40px;
+  margin-top: 6px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 85%;
+  color: black;
+  background-color: white;
+  border-color: blue;
+}
+
 /* SLIDE SHOW */
 /*
 
@@ -345,8 +371,14 @@ img {vertical-align: middle;}
 				<a class="nav-link" href="About.html">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
+				
+				<input type="text" name="search" placeholder="Search.."> 
+
+		
+				 	
 			</nav>
 		</div>
+
 		<div class="sideMenu">
 			<img id="banner" src="banner.jpg"/>
 			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
@@ -356,6 +388,10 @@ img {vertical-align: middle;}
   			<a class="productList" href="#">Earrings</a>
   			<a class="productList" href="#">Pendants</a>
   			<a class="productList" href="#">Loom Patterns</a>
+  			<a class="productList" href="#">Your Orders <img id="cartImg" src="Cart_Icon.png"/></a>
+  			<input type="text" name="search" placeholder="Search.."> 
+  					
+
 		</div>
 
 
