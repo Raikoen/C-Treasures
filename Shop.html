@@ -20,12 +20,14 @@
 			https://fonts.google.com/specimen/Noto+Sans?sidebar.open&selection.family=Noto+Sans
 		Courgette Font
 			https://fonts.google.com/specimen/Courgette?preview.text_type=custom
-		Animated Search Bar
-			https://www.w3schools.com/howto/howto_css_animated_search.asp 
+		Responsive Search Bar Example
+			https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3
 		Responsive Website Example
 			https://www.w3schools.com/howto/howto_css_example_website.asp 
 		Free Cart Image
 			https://www.freeiconspng.com/img/28356 
+		Free Search Icon
+			https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png
 -->
 
 <html>
@@ -41,16 +43,6 @@
 			{
 				margin: 0;
 				font-family: 'Noto Sans', sans-serif;
-			}
-
-
-			#header
-			{
-				background-color: rgb(0, 230, 230);
-				position: fixed;
-				top: 0;
-				display: flex;
-				width: 100%;
 			}
 					
 			#navbar
@@ -77,6 +69,41 @@
 				color: blue;
 			}
 
+			#navbar .search-bar 
+			{
+  				float: right;
+			}
+
+			#navbar input[type=text] 
+			{
+  				padding: 6px;
+  				margin-top: 8px;
+  				font-size: 17px;
+  				border: none;
+			}
+
+			#navbar .search-bar button 
+			{
+  				float: right;
+  				padding: 6px 10px;
+  				margin-top: 8px;
+  				margin-right: 16px;
+  				background: #ddd;
+  				font-size: 17px;
+  				border: none;
+  				cursor: pointer;
+			}
+
+			#navbar .search-bar button:hover 
+			{
+  				background: #ccc;
+			}
+
+			#Search_Btn
+			{
+				max-height: 25px;
+				max-width: 25px;
+			}
 			#banner
 			{
 				max-height: 300px;
@@ -86,8 +113,9 @@
 			#cartImg
 			{
 				margin-left: 10px;
-				max-width: 30px;
-				max-height: 30px;
+				max-width: 40px;
+				max-height: 40px;
+				margin-top: 10px;
 			}
 
 			.sideMenu 
@@ -136,6 +164,12 @@
 
 			@media screen and (max-width: 700px) 
 			{
+				#navbar
+				{
+					width: 100%;
+					height: auto;
+					position: relative;
+				}
   				.sideMenu
   				{
     				width: 100%;
@@ -143,7 +177,7 @@
    					position: relative;
    					margin-top: 0;
  				}
-  				
+
   				div.pageContent {margin-left: 30px}
 
   				#banner
@@ -250,26 +284,11 @@
   }
 }
 
-input[type=text] {
-  color: black;
-  background-color: #f2f2f2;
-  border-color: cyan;
-  width: 125px;
-  height: 40px;
-  margin-top: 6px;
-  margin-left: 16px;
-  margin-bottom: 16px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 85%;
-  color: black;
-  background-color: white;
-  border-color: blue;
-}
+
+
+
+
 
 /* SLIDE SHOW */
 /*
@@ -367,15 +386,22 @@ img {vertical-align: middle;}
 	<body>
 		<div>
 			<nav id="navbar">
+				
 				<a class="nav-link" href="#">Home</a>
 				<a class="nav-link" href="About.html">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
 				
-				<input type="text" name="search" placeholder="Search.."> 
+				<div class="search-bar">
+    				<form>
+      					<input type="text" placeholder="Search.." name="search">
+      					<button type="submit"><i class="fa fa-search"><img id="Search_Btn" src="Search_Icon.png"/></i></button>
+    				</form>
+  				</div>
 
-		
-				 	
+  			
+  					<img src="Cart_Icon.png" id="cartImg"/>
+  				
 			</nav>
 		</div>
 
@@ -388,10 +414,6 @@ img {vertical-align: middle;}
   			<a class="productList" href="#">Earrings</a>
   			<a class="productList" href="#">Pendants</a>
   			<a class="productList" href="#">Loom Patterns</a>
-  			<a class="productList" href="#">Your Orders <img id="cartImg" src="Cart_Icon.png"/></a>
-  			<input type="text" name="search" placeholder="Search.."> 
-  					
-
 		</div>
 
 
