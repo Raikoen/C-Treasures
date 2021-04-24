@@ -10,12 +10,10 @@
 			https://www.w3schools.com/colors/colors_picker.asp
 		Web Portfolio
 			https://codepen.io/kyle_cole/full/yLeoaJO
-    Tim-Berners Lee Tribute Page
-      https://codepen.io/kyle_cole/full/WNreebW
-		
+    	Tim-Berners Lee Tribute Page
+      		https://codepen.io/kyle_cole/full/WNreebW
 		Side Menu Example
 			https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
-			
 		Noto Sans Font
 			https://fonts.google.com/specimen/Noto+Sans?sidebar.open&selection.family=Noto+Sans
 		Courgette Font
@@ -30,204 +28,7 @@
 	<head>
 		<title>About</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-			@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-			
-			body
-			{
-				margin: 0;
-				font-family: 'Noto Sans', sans-serif;
-			}
-
-
-			#header
-			{
-				background-color: rgb(0, 230, 230);
-				position: fixed;
-				top: 0;
-				display: flex;
-				width: 100%;
-			}
-					
-			#navbar
-			{
-				margin-left: 200px;
-				position: fixed;
-				display: flex;
-				justify-content: flex-start;
-				background-image: linear-gradient(#80dfff, #0086b3);
-				width: 100%;
-				max-height: 60px;
-			}
-			.nav-link
-			{
-				text-decoration: none;
-				color: white;
-				padding: 1rem;
-				display: flex;
-				margin-right: 1rem;
-			}
-			.nav-link:hover
-			{
-				background-color: cyan;
-				color: blue;
-			}
-
-			#banner
-			{
-				max-height: 300px;
-				max-width: 200px;
-				
-			}
-
-			.sideMenu 
-			{
-  				padding: 0;
-  				width: 200px;
-  				background-color: #e6f9ff;
-  				position: fixed;
-  				
-			}
-
-			.sideMenu a 
-			{
-  				display: block;
-  				color: black;
-  				padding: 16px;
-  				text-decoration: none;
-			}
- 
-			.sideMenu a.active 
-			{
-  				background-color: cyan;
-				color: blue;
-			}
-
-			.sideMenu a:hover:not(.active) 
-			{
-				background-color: #b3e6ff;
-				text-decoration: underline;
-  				color: blue;
-			}
-
-			#sectionHeading
-			{
-				font-family: 'Courgette', cursive;
-				margin-top: 60px;
-			}
-
-      #image
-      {
-        max-width: 100%;
-        height: auto;
-      }
-        
-      #about-info
-      {
-        text-align: left;
-        width: 100%;
-        height: auto;
-        background-color: rgb(230, 245, 255);
-      }
-          
-      strong
-      { color: rgb(0, 143, 179); }
-      
-      a
-      { color: purple; }
-      
-      a:hover
-      {
-        text-decoration: none;
-        color: blue;
-      }
-      
-      .blockquote
-      {
-        background-color: rgb(179, 209, 255);
-        border-radius: 1%;
-        width: 100%;
-        height: auto;
-        padding: 10px 5px 10px 5px;
-        text-align: left;
-      }
-      
-      #etsy-site
-      {
-        padding: 10px 5px 10px;
-      }
-
-
-
-			div.pageContent
-			{
-		
-  				margin-left: 200px;
-  				padding: 1px 16px;
-  				height: 1000px;
-			}
-
-			@media screen and (max-width: 700px) 
-			{
-  				.sideMenu
-  				{
-    				width: 100%;
-    				height: auto;
-   					position: relative;
-   					margin-top: 0;
- 				}
-  				
-  				div.pageContent {margin-left: 30px}
-
-  				#banner
-  				{
-  					display: none;
-  				}
-
-  				#header
-				{
-					background-color: rgb(0, 230, 230);
-					position: fixed;
-					width: 100%;
-				}
-
-  				#navbar
-				{
-					position: relative;
-					background-image: linear-gradient(#80dfff, #0086b3);
-					width: 100%;
-					max-height: 60px;
-					margin-left: 0;
-				}
-
-				#navbar a
-				{
-					text-decoration: none;
-					color: white;
-					padding: 1rem;
-					margin-right: 1rem;
-				}
-
-				#navbar a:hover
-				{
-					background-color: cyan;
-					color: blue;
-				}
-
-
-			}
-
-			.categories:hover
-			{
-				transform: translateY(8px);
-			}
-
-			* 
-			{ box-sizing: border-box; }
-
-		</style>
+		<link rel="stylesheet" href="About_Styles.css">
 	</head>
 	
 	<body>
@@ -237,6 +38,16 @@
 				<a class="nav-link" href="#">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
+
+				<div class="search-bar">
+    				<form>
+      					<input type="text" placeholder="Search.." name="search">
+      					<button style="margin-top: 8px" type="submit"><i class="fa fa-search"><img id="Search_Btn" src="Search_Icon.png"/></i></button>
+    				</form>
+  				</div>
+
+  		
+   				<a href="cart.html"><img src="Cart_Icon.png" id="cartImg" /></a>
 			</nav>
 		</div>
 		<div class="sideMenu">
@@ -251,73 +62,65 @@
 		</div>
 
 
-  <center>
-	<div class="pageContent">
-     <main id="main">
-        <h1 id="sectionHeading">Carri's Treasures</h1>
-        <h2>Carri Cole</h2>
+  		<center>
+			<div class="pageContent">
+     			<main id="main">
+        			<h1 id="sectionHeading">Carri's Treasures</h1>
+        			<h2>Carri Cole</h2>
       
-        <div id="img-div">    
-          <img id="image" src="C-TreasuresAbout_Image.jpg">
-          <figcaption id="img-caption">Taken at Art in the Park in Griffith, an annual arts & crafts show</figcaption>
-        </div>
+        			<div id="img-div">    
+          				<img id="image" src="C-TreasuresAbout_Image.jpg">
+          				<figcaption id="img-caption">Taken at Art in the Park in Griffith, an annual arts & crafts show</figcaption>
+        			</div>
         
-        <br>
+        			<br>
         
-        <div class="blockquote">
-          <blockquote>
-            Hello, welcome to my shop! Just a bit about me...
-          </blockquote>
-        </div>
+        			<div class="blockquote">
+          				<blockquote>
+            				Hello, welcome to my shop! Just a bit about me...
+          				</blockquote>
+        			</div>
         
-        <br>
+        			<br>
       
-        <section id="about-info">
+        			<section id="about-info">
         
-        <hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
+        				<hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
           
-          <h3>About</h3>
+          				<h3 style="padding-left: 15px">About</h3>
           
-          <ul>  
-            <li>
-              <strong>Experience</strong><br>
-              I've been making jewewlery for over 10 years <br>
-              I take classes all over the country <br>
-              I have also taught classes in several states
-            </li>
-          <br>
-            <li>
-              <strong>Interests</strong><br>
-              Learning new methods & patterns in order to broaden creative endeavors
-            </li>
-          <br>
-           <li>
-              <strong>Events Attended</strong><br>
-              Art in the Park <br>
-              Park Full of Art <br>
-              Tall Grass
-            </li>
-          </ul>
-          
-        <hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
-        
-        <div id="etsy-site">
-          If you would like to reach out to me, feel free to contact me here at my
-          <a id="tribute-link" target="_blank" href="https://www.etsy.com/shop/carricole?page=2#items">Etsy shop</a>
-        </div>
-    
-        </section>
-      
-      </main> 
-     
-  </div>
-		
-<!--
-			<footer id="footer">
-				<p id="copyright">&copy; Kyle Cole, June 2020</p>
-			</footer>
-		-->
+          				<ul>  
+            				<li>
+              					<strong>Experience</strong><br>
+              					I've been making jewewlery for over 10 years <br>
+              					I take classes all over the country <br>
+              					I have also taught classes in several states
+            				</li>
+          					<br>
+            				
+            				<li>
+              					<strong>Interests</strong><br>
+              					Learning new methods & patterns in order to broaden creative endeavors
+            				</li>
+          					<br>
 
-		
+           					<li>
+              					<strong>Events Attended</strong><br>
+             	 				Art in the Park <br>
+              					Park Full of Art <br>
+              					Tall Grass
+            				</li>
+          				</ul>
+          
+        				<hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
+        
+        				<div id="etsy-site">
+          					If you would like to reach out to me, feel free to contact me here at my
+          					<a id="tribute-link" target="_blank" href="https://www.etsy.com/shop/carricole?page=2#items">Etsy shop</a>
+        				</div>
+        		</section>
+      		</main>  
+  		</div>
+			
 	</body>
 </html>
