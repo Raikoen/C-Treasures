@@ -10,8 +10,10 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
+    "mongoose": "^5.11.18",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

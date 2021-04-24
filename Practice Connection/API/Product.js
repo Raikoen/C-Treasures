@@ -1,19 +1,43 @@
 const { response, Router } = require('express');
 const express = require('express');
-const mongoose = require('mongoose');
 const Product = require('../DBConnection/Product');
 const route = express.Router();
-var mongo = require('mongodb').MongoClient;
+const path = require('path');
 var assert = require('assert');
+const { exit } = require('process');
 
-const URI = "mongodb+srv://scarpenter5:Clayton1@cluster0.bby5d.mongodb.net/Products?retryWrites=true&w=majority";
 
 
 route.get('/get', async (req,res)=>{
-
+       // var resultArray = [];
         const product = await Product.find();
-        res.json(product);
+        //var length = product.length();
 
+        
+        res.render('Shop', {productObject : product});
+        
+        //res.sendFile(path.join(__dirname + '/Shop.html'));
+        //res.sendFile('./Shop',);
+
+       /*
+        product.forEach(function(doc){
+            if(doc.equals(!null)){
+                console.log(doc.productName);
+                resultArray.push(doc);
+                
+            } else {
+                return 1;
+                console.log('Could not find result');
+            }
+        }, function(){
+            
+        });
+        */
+        //res.render('Shop', {product: product});
+        //res.sendFile('Shop.html', {
+        //    root: path.join('../', './')
+        //})
+        
 });
 
 route.post('/', async (req,res)=>{
@@ -30,7 +54,7 @@ route.post('/', async (req,res)=>{
     let productModel = new Product(product);
     await productModel.save();
     res.json(productModel);
-});
+})
 
 
 module.exports = route;
