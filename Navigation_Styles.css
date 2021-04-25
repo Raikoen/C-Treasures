@@ -1,0 +1,177 @@
+/*  
+  Author: Kyle Christian Cole
+  Document: Navigation_Styles.css
+  Project: C-Treasures
+  Course: COMP 424 - Client-Side Web Design
+*/
+
+/* Top Nav styles */
+.topMenu
+{
+  top: 0;
+  left: 200px;
+  overflow: hidden;
+  background-color: #0099e6;
+  position: fixed;
+  width: 78%;
+}
+.topMenu a 
+{
+  color: white;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+.topMenu a.active 
+{
+  background-color: #006699;
+  color: white;
+  font-weight: bold;
+}
+.topMenu a:hover:not(.active) 
+{
+  background-color: #80dfff;
+  text-decoration: underline;
+  color: blue;
+}
+
+/* Search Bar styles */
+.topMenu .search-bar
+  { float: right; }
+
+.topMenu input[type=text] 
+{
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 500px;
+}
+.topMenu .search-bar button 
+{
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topMenu .search-bar button:hover 
+  { background: #ccc; }
+
+/* Image Dimension styles */
+#banner-image
+{
+  max-height: 300px;
+  max-width: 200px;
+}
+#search-icon
+{
+  max-height: 21px;
+  max-width: 21px;
+}
+#cart-icon
+{
+  max-width: 35px;
+  max-height: 35px;
+}
+
+/* Side Menu styles */
+.sideMenu 
+{
+   top: 0;
+   left: 0;
+   width: 200px;
+   background-color: #0099e6;
+   position: fixed;
+}
+.sideMenu a 
+{
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+.sideMenu a.active 
+{
+  background-color: #006699;
+  color: white;
+}
+.sideMenu a:hover:not(.active) 
+{
+  background-color: #80dfff;
+  text-decoration: underline;
+  color: blue;
+}
+
+/* Drop-Down functions of sideMenu */
+.dropDownBtn
+{
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  background-color: #0099e6;     
+  color: white;
+  text-decoration: none;
+}
+.dropDownMenu
+  { background-color: #0099e6; }
+
+/* Mobile Menu icon */
+#menu-icon
+{
+  float: right;
+  max-height: 45px;
+  max-width: 45px;
+}
+#menu-icon:hover 
+  { background-color: #b3e6ff; }
+
+/* For mobile-friendly viewing */
+@media screen and (max-width: 600px) 
+{
+  .topMenu
+  { 
+      left: 0; 
+      width: 100%;
+      position: relative;
+  }
+
+  .topMenu .search-bar 
+  { 
+    float: none; 
+    padding-left: 20px;
+  }
+
+  .topMenu a
+  {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    text-align: left;
+    display: block;
+  }
+
+  .topMenu input[type=text] 
+  { 
+    border: 1px solid #ccc; 
+    width: 85%;
+  }
+
+  .sideMenu
+  {
+    top: 20px;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .dropDownMenu
+    { display: none; }
+
+  #banner-image
+    { display: none; }
+
+}
