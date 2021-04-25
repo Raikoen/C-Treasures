@@ -16,12 +16,16 @@
 			https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
 		Noto Sans Font
 			https://fonts.google.com/specimen/Noto+Sans?sidebar.open&selection.family=Noto+Sans
-		Courgette Font
-			https://fonts.google.com/specimen/Courgette?preview.text_type=custom
-		Search Button/Bar
-			https://www.w3schools.com/howto/howto_css_search_button.asp
+		Responsive Navigation w/ Search Bar
+			https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3
 		Responsive Website Example
 			https://www.w3schools.com/howto/howto_css_example_website.asp 
+		Media Queries
+			https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+		Mobile Menu Icon
+			https://www.clipartmax.com/max/m2i8i8A0K9A0H7b1/
+		Cart Icon
+			https://www.freepik.com/free-icon/shopping-cart_933785.htm
 -->
 
 <html>
@@ -29,98 +33,124 @@
 		<title>About</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="About_Styles.css">
+		<link rel="stylesheet" href="Navigation_Styles.css">
 	</head>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+		body
+		{ 
+  			font-family: 'Noto Sans', sans-serif;
+  			margin-top: 0; 
+		}
+	</style>
 	
 	<body>
+		<!-- Top Nav Menu -->
 		<div>
-			<nav id="navbar">
-				<a class="nav-link" href="Shop.html">Home</a>
-				<a class="nav-link" href="#">About</a>
-				<a class="nav-link" href="#">Events</a>
-				<a class="nav-link" href="#">Contact</a>
+			<nav class="topMenu">
+				<a href="Shop.html">Shop</a>
+				<a class="active" href="#">About</a>
+				<a href="#">Events</a>
+				<a href="#">Contact</a>
+				<a href="cart.html"><img id="cart-icon" src="Cart_Icon.png"></a>
 
+				<!-- Search Bar -->
 				<div class="search-bar">
     				<form>
       					<input type="text" placeholder="Search.." name="search">
-      					<button style="margin-top: 8px" type="submit"><i class="fa fa-search"><img id="Search_Btn" src="Search_Icon.png"/></i></button>
+      					<button style="margin-top: 8px" type="submit"><img id="search-icon" src="Search_Icon.png"/></button>
     				</form>
-  				</div>
-
-  		
-   				<a href="cart.html"><img src="Cart_Icon.png" id="cartImg" /></a>
+  				</div>	
 			</nav>
 		</div>
+
+		<!-- Side Menu -->
 		<div class="sideMenu">
-			<img id="banner" src="banner.jpg"/>
-			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
- 				color: white; text-decoration: none" >Shop</a>
-			<a class="active" href="#">All Products</a>
-  			<a class="productList" href="#">Bracelets</a>
-  			<a class="productList" href="#">Earrings</a>
-  			<a class="productList" href="#">Pendants</a>
-  			<a class="productList" href="#">Loom Patterns</a>
+			<img id="banner-image" src="banner.jpg"/>
+			<a class="dropDownBtn">Products <img id="menu-icon" src="MobileMenuIcon.png"/></a>
+ 		
+ 			<div class="dropDownMenu">
+ 				<a href="#">All Products</a>
+ 				<a href="#">Bracelets</a>
+ 				<a href="#">Earrings</a>
+    			<a href="#">Pendants</a>
+    			<a href="#">Loom Patterns</a>
+ 			</div>
 		</div>
 
+		<script>
+			/*  Used to hide or show side menu options */
+			var dropDownMenu = document.getElementsByClassName("dropDownBtn");
+			var i;
 
-  		<center>
-			<div class="pageContent">
-     			<main id="main">
-        			<h1 id="sectionHeading">Carri's Treasures</h1>
-        			<h2>Carri Cole</h2>
-      
-        			<div id="img-div">    
-          				<img id="image" src="C-TreasuresAbout_Image.jpg">
-          				<figcaption id="img-caption">Taken at Art in the Park in Griffith, an annual arts & crafts show</figcaption>
-        			</div>
-        
-        			<br>
-        
+			for (i = 0; i < dropDownMenu.length; i++) 
+			{
+  				dropDownMenu[i].addEventListener("click", function() 
+  				{
+  					this.classList.toggle("active");
+  					var menuOptions = this.nextElementSibling;
+  					if (menuOptions.style.display === "block") 
+  					{
+  						menuOptions.style.display = "none";
+  					}
+  					else 
+  					{
+  						menuOptions.style.display = "block";
+  					}
+  				});
+			}
+		</script>
+		
+		<!-- Main Content -->
+		<main class= "pageContent">
+			<center>
+				<h1 id="shop-title">Carri's Treasures</h1>
+
+				<!-- Store Owner Image -->
+				<div>    
+          				<img id="owner-image" src="About_Image.png">
+          				<figcaption id="img-caption">Taken at the arts & crafts event known as Art in the Park in Griffith, Indiana</figcaption>
+        		</div>
+
+        		<br>
+        			<!-- Greeting Message -->
         			<div class="blockquote">
           				<blockquote>
-            				Hello, welcome to my shop! Just a bit about me...
+            				Hello! My name is Carri Cole, and welcome to my shop!
           				</blockquote>
         			</div>
-        
+
         			<br>
-      
+      				<!-- About Store Owner & Shop -->
         			<section id="about-info">
         
         				<hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
-          
-          				<h3 style="padding-left: 15px">About</h3>
-          
-          				<ul>  
-            				<li>
-              					<strong>Experience</strong><br>
-              					I've been making jewewlery for over 10 years <br>
-              					I take classes all over the country <br>
-              					I have also taught classes in several states
-            				</li>
-          					<br>
-            				
-            				<li>
-              					<strong>Interests</strong><br>
-              					Learning new methods & patterns in order to broaden creative endeavors
-            				</li>
-          					<br>
 
-           					<li>
-              					<strong>Events Attended</strong><br>
-             	 				Art in the Park <br>
-              					Park Full of Art <br>
-              					Tall Grass
-            				</li>
-          				</ul>
-          
+          				<article id="about-shop">
+
+          					<h3>About Carri's Treasures</h3>
+
+          					Support a small business today! My one-woman shop, Carri’s Treasures, is proud to offer radiant, one-of-a-kind jewelry pieces that I believe are just what you’re looking for! I do custom pieces, as well. 
+          				</article>
+
+          				<article id="about-jeweler">
+          					
+          					<h3>About Me</h3>
+
+          					Jewelry-making has been a passion of mine for over ten years. I have learned so much from not only taking ______ classes [what kinds of classes??] all over the United States, but also teaching some of these classes to fellow creatives. You may have spotted me at events like Art in the Park, Park Full of Art, and Tall Grass! I am confident that being open to learning new methods and patterns along the way has furthered me in my decade-long journey of becoming an experienced and knowledgeable jeweler.
+          				</article>
+   
         				<hr style="padding: 3px; background-color: rgb(153, 204, 255); border: none;">
         
-        				<div id="etsy-site">
-          					If you would like to reach out to me, feel free to contact me here at my
-          					<a id="tribute-link" target="_blank" href="https://www.etsy.com/shop/carricole?page=2#items">Etsy shop</a>
+        				<div id="contact-info">
+          					If you would like to reach out to me, just fill out the 
+          					<a id="contact-link" target="_blank" href="contact.html">contact form</a>, and let's get started!
         				</div>
         		</section>
-      		</main>  
-  		</div>
-			
+        
+			</center>
+		</main>
+
 	</body>
 </html>
