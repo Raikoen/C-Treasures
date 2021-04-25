@@ -3,34 +3,40 @@ const express = require('express');
 const Product = require('../DBConnection/Product');
 const route = express.Router();
 const path = require('path');
+const { error } = require('console');
 
 
 route.get('/get', async (req,res)=>{
-        const product = await Product.find();
-        res.render('Shop', {productObject : product});
-        
+
+    const product = await Product.find();
+    res.render('Shop', {productObject : product});   
         
 });
 
+route.get('/about', async (req,res)=>{
 
+    res.render('About');
+    
+});
 
 route.get('/:productSKU', async(req, res)=>{
-    const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
-    console.log(productId);
-    const product = await Product.findOne({ productName : productId});
-    console.log(product.productName);
-    res.render("ProductPage", {productObject : product});
-    
+
+    try {
+        const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
+        const product = await Product.findOne({ productName : productId});
+        res.render("ProductPage", {productObject : product});
+      } catch(e) {  // 3. Handled
+        console.error("an error occured");
+      }
+
+  
     
 });
 
-  route.get('/about', (req,res)=>{
-    //const product = await Product.find();
-    res.sendFile('About');
 
-});
 
 route.post('/', async (req,res)=>{
+
     const{productName, productPrice, productColor, productType, productSKU, productPicture, productDescription, productDetails} = req.body;
     let product = {};
     product.productName = productName;
@@ -44,6 +50,7 @@ route.post('/', async (req,res)=>{
     let productModel = new Product(product);
     await productModel.save();
     res.json(productModel);
+
 })
 
 
