@@ -4,143 +4,42 @@
 	Project: C-Treasures
 	Course: COMP 424 - Client-Side Web Design
 */
-	
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
-body
-{
-	margin: 0;
-	font-family: 'Noto Sans', sans-serif;
-}
-					
-#navbar
-{
-	margin-left: 200px;
-	position: fixed;
-	display: flex;
-	justify-content: flex-start;
-	background-image: linear-gradient(#80dfff, #0086b3);
-	width: 100%;
-	max-height: 60px;
-}
-.nav-link
-{
-	text-decoration: none;
-	color: white;
-	padding: 1rem;
-	display: flex;
-	margin-right: 1rem;
-}
-.nav-link:hover
-{
-	background-color: cyan;
-	color: blue;
-}
-#navbar .search-bar { float: right; }
-#navbar input[type=text] 
-{
-  	padding: 6px;
-  	margin-top: 8px;
-  	font-size: 17px;
-  	border: none;
-  	width: 700px;
-}
-
-#navbar .search-bar button 
-{
-  	float: right;
-  	padding: 6px 10px;
-  	margin-right: 16px;
-  	background: #ddd;
-  	font-size: 17px;
-  	border: none;
-  	cursor: pointer;
-}
-#navbar .search-bar button:hover { background: #ccc; }
-
-#Search_Btn
-{
-	max-height: 21px;
-	max-width: 21px;
-}
-#banner
-{
-	max-height: 300px;
-	max-width: 200px;			
-}
-#cartImg
-{
-	margin-left: 5px;
-	max-width: 35px;
-	max-height: 35px;
-	margin-top: 10px;
-}
-
-.sideMenu 
-{
-  	padding: 0;
-  	width: 200px;
-  	background-color: #e6f9ff;
-  	position: fixed;  				
-}
-.sideMenu a 
-{
-  	display: block;
-  	color: black;
-  	padding: 16px;
-  	text-decoration: none;
-} 
-.sideMenu a.active 
-{
-  	background-color: cyan;
-	color: blue;
-}
-.sideMenu a:hover:not(.active) 
-{
-	background-color: #b3e6ff;
-	text-decoration: underline;
-  	color: blue;
-}
-
-#sectionHeading
-{
-	margin-top: 60px;
-}
-
+/* Overall page styles */
 div.pageContent
 {
 	margin-left: 200px;
-  	padding: 1px 16px;
+  	padding: 50px 16px;
   	height: 1000px;
+  	width: 78%;
 }
 
-.categories:hover { transform: translateY(8px); }
+/* Animate product images */
+.products:hover 
+	{ transform: translateY(8px); }
 
-* { box-sizing: border-box; }
-
-/* Dimensions for the product images */
-
-.product-filter { display: flex; }
-.product-filter h1 { flex-grow: 1; }
-.sort { display: flex; }
-.collection-sort 
+/* Drop-down sort menu styles */
+.product-filter 
+	{ display: flex; }
+.product-filter h1 
+	{ flex-grow: 1; }
+.sort-menu 
 {
   	display: flex;
   	flex-direction: column;
 }
 
-.products 
+/* Product Image Display styles */
+.product-gallery
 {
   	display: flex;
   	flex-wrap: wrap;
 }
-
-.product-card { flex: 1 16%; }
-
+.product-card 
+	{ flex: 1 16%; }
 .product-image img 
 {
-	padding: 10px;
+	padding: 8px;
   	max-width: 100%;
 }
 .product-info 
@@ -149,74 +48,39 @@ div.pageContent
   	margin-top: auto;
 }
 
-@media screen and (max-width: 700px) 
-{
-	#navbar
-	{
-		width: 100%;
-		height: auto;
-		position: relative;
-	}
-  	.sideMenu
-  	{
-    	width: 100%;
-    	height: auto;
-   		position: relative;
-   		margin-top: 0;
- 	}
-	
-	div.pageContent { margin-left: 30px; }
+/* Allows for spaces in between product images */
+* { box-sizing: border-box; }
 
-  	#banner { display: none; }
-
-  	#header
-	{
-		background-color: rgb(0, 230, 230);
-		position: fixed;
-		width: 100%;
-	}
-
-  	#navbar
-	{
-		position: relative;
-		background-image: linear-gradient(#80dfff, #0086b3);
-		width: 100%;
-		max-height: 60px;
-		margin-left: 0;
-	}
-	#navbar a
-	{
-		text-decoration: none;
-		color: white;
-		padding: 1rem;
-		margin-right: 1rem;
-	}
-	#navbar a:hover
-	{
-		background-color: cyan;
-		color: blue;
-	}
-
-}
-
-			
+/* For mobile-friendly viewing */
 @media (max-width: 920px) 
 {
-  .product-card { flex: 1 21%; }
+	.product-card { flex: 1 21%; }
 }
 
 @media (max-width: 600px) 
 {
-  .product-card { flex: 1 46%; }
-}
+  div.pageContent 
+  { 
+  	margin-left: 20px; 
+  	margin-top: -30px;
+  	width: 88%;
+  }
 
-@media (max-width: 480px) 
-{
-  .product-filter { flex-direction: column; }
+  .product-card 
+  	{ flex: 1 55%; }
+  h1
+  	{ text-align: center; }
+
 }
 
 @media (max-width: 480px) 
 {
   .product-filter { flex-direction: column; }
   .sort { align-self: flex-start; }
+}
+
+@media (max-width: 480px) 
+{
+  .product-filter { flex-direction: column; }
+ 
 }
