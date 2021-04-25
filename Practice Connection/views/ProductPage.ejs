@@ -36,8 +36,8 @@
 	<body>
 		<div>
 			<nav id="navbar">
-				<a class="nav-link" href="Shop.html">Home</a>
-				<a class="nav-link" href="About.html">About</a>
+				<a class="nav-link" href="./get">Home</a>
+				<a class="nav-link" href="About">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
 
@@ -70,7 +70,7 @@
  
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-   <img id="productImage" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0">
+   <img id="productImage" src= "<%=productObject.productPicture%>" >
   </div>
  
  
@@ -79,26 +79,22 @@
  
     <!-- Product Description -->
     <div class="product-description">
-      <h1>Red, White, & Black Loom Bracelet</h1>
+      <h1> <%=productObject.productName%> </h1>
 
       <!-- Product Pricing -->
     <div class="product-price">
-      <span>$24.00</span>
+      <span>$<%=productObject.productPrice%>.00</span>
       <a href="cart.html" class="cart-btn">Add to cart</a>
     </div>
 
       <p>
         <ul>
-          <li>Handmade item</li>
-          <li>Bracelet length: 7.0 Inches</li>
-          <li>Bracelet width: .375 Inches</li>
-          <li>Materials: Glass</li>
-          <li>Closure: Lobster Claw</li>
-          <li>Adjustable</li>
-          <li>Style: Boho & Hippie</li>
-        </ul>
+          <li>Description: <%=productObject.productDescription%></li>
+          <li>Details: <%=productObject.productDetails%></li>
+          <li>Color: <%=productObject.productColor%></li>
+          <li>Type: <%=productObject.productName%></li>
+        </ul> 
 
-        Bold. Measures 7.0 inches. Silver toned Lobster clasp. Using the extension chain it goes up to 9 inches 
       </p>
     </div>
  

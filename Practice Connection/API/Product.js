@@ -9,36 +9,26 @@ route.get('/get', async (req,res)=>{
         const product = await Product.find();
         res.render('Shop', {productObject : product});
         
-        //res.sendFile(path.join(__dirname + '/Shop.html'));
-        //res.sendFile('./Shop',);
-
-       /*
-        product.forEach(function(doc){
-            if(doc.equals(!null)){
-                console.log(doc.productName);
-                resultArray.push(doc);
-                
-            } else {
-                return 1;
-                console.log('Could not find result');
-            }
-        }, function(){
-            
-        });
-        */
-        //res.render('Shop', {product: product});
-        //res.sendFile('Shop.html', {
-        //    root: path.join('../', './')
-        //})
         
 });
 
+
+
 route.get('/:productSKU', async(req, res)=>{
-    var productId = req.params.productName;
-    let product = await Product.find({productName: productId});
+    const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
+    console.log(productId);
+    const product = await Product.findOne({ productName : productId});
+    console.log(product.productName);
     res.render("ProductPage", {productObject : product});
     
-  })
+    
+});
+
+  route.get('/about', (req,res)=>{
+    //const product = await Product.find();
+    res.sendFile('About');
+
+});
 
 route.post('/', async (req,res)=>{
     const{productName, productPrice, productColor, productType, productSKU, productPicture, productDescription, productDetails} = req.body;
