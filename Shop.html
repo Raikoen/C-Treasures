@@ -33,78 +33,98 @@
 		<title>Shop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="Shop_Styles.css">
+    <link rel="stylesheet" href="Navigation_Styles.css">
 	</head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    body
+    { 
+        font-family: 'Noto Sans', sans-serif;
+        margin-top: 0; 
+    }
+  </style>
 	
 	<body>
+    <!-- Top Nav Menu -->
 		<div>
-			<nav id="navbar">
-				
-				<a class="nav-link" href="#">Home</a>
-				<a class="nav-link" href="About.html">About</a>
-				<a class="nav-link" href="#">Events</a>
-				<a class="nav-link" href="#">Contact</a>
-				
-				<div class="search-bar">
-    				<form>
-      					<input type="text" placeholder="Search.." name="search">
-      					<button style="margin-top: 8px" type="submit"><i class="fa fa-search"><img id="Search_Btn" src="Search_Icon.png"/></i></button>
-    				</form>
-  				</div>
+      <nav class="topMenu">
+        <a class="active" href="#">Shop</a>
+        <a href="About.html">About</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+        <a href="cart.html"><img id="cart-icon" src="Cart_Icon.png"></a>
 
-  		
-   				<a href="cart.html"><img src="Cart_Icon.png" id="cartImg" /></a>
-  				
-			</nav>
-		</div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin-top: 8px" type="submit"><img id="search-icon" src="Search_Icon.png"/></button>
+            </form>
+          </div>  
+      </nav>
+    </div>
 
-		<div class="sideMenu">
-			<img id="banner" src="banner.jpg"/>
-			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
- 				color: white; text-decoration: none" >Shop</a>
-			<a class="active" href="#">All Products</a>
-  			<a class="productList" href="#">Bracelets</a>
-  			<a class="productList" href="#">Earrings</a>
-  			<a class="productList" href="#">Pendants</a>
-  			<a class="productList" href="#">Loom Patterns</a>
-		</div>
+    <!-- Side Menu -->
+    <div class="sideMenu">
+      <img id="banner-image" src="banner.jpg"/>
+      <a class="dropDownBtn">Products <img id="menu-icon" src="MobileMenuIcon.png"/></a>
+    
+      <div class="dropDownMenu">
+        <a class="active" href="#">All Products</a>
+        <a href="#">Bracelets</a>
+        <a href="#">Earrings</a>
+          <a href="#">Pendants</a>
+          <a href="#">Loom Patterns</a>
+      </div>
+    </div>
 
+    <script>
+      /*  Used to hide or show side menu options */
+      var dropDownMenu = document.getElementsByClassName("dropDownBtn");
+      var i;
 
+      for (i = 0; i < dropDownMenu.length; i++) 
+      {
+          dropDownMenu[i].addEventListener("click", function() 
+          {
+            this.classList.toggle("active");
+            var menuOptions = this.nextElementSibling;
+            if (menuOptions.style.display === "block") 
+            {
+              menuOptions.style.display = "none";
+            }
+            else 
+            {
+              menuOptions.style.display = "block";
+            }
+          });
+      }
+    </script>
 
+  <!-- Main Content  -->
 	<div class="pageContent">
- 		<h1 id="sectionHeading">All Products</h1>
+ 		<h1>All Products</h1>
 
+    <!-- Sort By Filter -->
  		<nav style="padding-bottom: 20px" class="product-filter">
 
-  			<div class="sort">
-
-    			<div style="padding-right: 45px" class="collection-sort">
-      				<label>Filter by:</label>
-      				<select>
-        				<option value="/">All Products</option>
-       					<option value="">Bracelets</option>
-        				<option value="">Earrings</option>
-        				<option value="">Pendants</option>
-        				<option value="">Loom Patterns</option>
-        				<option value="">Holiday Specials</option>
-      				</select>
-    			</div>
-
-    		<div style="padding-left: 35px" class="collection-sort">
+    		<div style="padding-left: 5px" class="sort-menu">
       			<label>Sort by:</label>
       			<select>
-        			<option value="/">Price</option>
-        			<option value="">Color</option>
+        			<option value="/">Relevant</option>
+              <option value="">Best Price</option>
+        			<option value="">Recently Added</option>
       			</select>
     		</div>
+	   </nav>
 
-  		</div>
-	</nav>
-
-	<section class="products">
+  <!-- Product Gallery Display -->
+	<section class="product-gallery">
 
   		<div class="product-card">
     		<div class="product-image">
-      			<a href="ProductPage.html"><img class="categories" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0"></a>
+      			<a href="ProductPage.html"><img class="products" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0"></a>
     		</div>
     		
     		<div class="product-info">
@@ -167,16 +187,6 @@
       		<h6>$79.00</h6>
     	</div>
   	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-		  <a href="ProductPage.html"><img id="ppicture" class="categories" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0"></a>
-		</div>
-		<div class="product-info">
-		  <h5 id="pname">product.product.Name</h5>
-		  <h6 id="pprice">$24.00</h6>
-		</div>
-	  </div>
 
   <div class="product-card">
     	<div class="product-image">
