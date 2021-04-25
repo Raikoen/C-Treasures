@@ -3,17 +3,10 @@ const express = require('express');
 const Product = require('../DBConnection/Product');
 const route = express.Router();
 const path = require('path');
-var assert = require('assert');
-const { exit } = require('process');
-
 
 
 route.get('/get', async (req,res)=>{
-       // var resultArray = [];
         const product = await Product.find();
-        //var length = product.length();
-
-        
         res.render('Shop', {productObject : product});
         
         //res.sendFile(path.join(__dirname + '/Shop.html'));
@@ -39,6 +32,13 @@ route.get('/get', async (req,res)=>{
         //})
         
 });
+
+route.get('/:productSKU', async(req, res)=>{
+    var productId = req.params.productName;
+    let product = await Product.find({productName: productId});
+    res.render("ProductPage", {productObject : product});
+    
+  })
 
 route.post('/', async (req,res)=>{
     const{productName, productPrice, productColor, productType, productSKU, productPicture, productDescription, productDetails} = req.body;
