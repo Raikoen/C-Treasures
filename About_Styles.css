@@ -5,202 +5,62 @@
 	Course: COMP 424 - Client-Side Web Design
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-			
-body
-{
-	margin: 0;
-	font-family: 'Noto Sans', sans-serif;
-}
+/* Overall page styles */
+.pageContent 
+  { margin-top: 65px; } 
 
-#header
-{
-	background-color: rgb(0, 230, 230);
-	position: fixed;
-	top: 0;
-	display: flex;
-	width: 100%;
-}
-					
-#navbar
-{
-	margin-left: 200px;
-	position: fixed;
-	display: flex;
-	justify-content: flex-start;
-	background-image: linear-gradient(#80dfff, #0086b3);
-	width: 100%;
-	max-height: 60px;
-}
-.nav-link
-{
-	text-decoration: none;
-	color: white;
-	padding: 1rem;
-	display: flex;
-	margin-right: 1rem;
-}
-.nav-link:hover
-{
-	background-color: cyan;
-	color: blue;
-}
-#navbar .search-bar { float: right; }
-#navbar input[type=text] 
-{
-  	padding: 6px;
-  	margin-top: 8px;
-  	font-size: 17px;
-  	border: none;
-  	width: 700px;
-}
-
-#navbar .search-bar button 
-{
-  	float: right;
-  	padding: 6px 10px;
-  	margin-right: 16px;
-  	background: #ddd;
-  	font-size: 17px;
-  	border: none;
-  	cursor: pointer;
-}
-#navbar .search-bar button:hover { background: #ccc; }
-
-#Search_Btn
-{
-	max-height: 21px;
-	max-width: 21px;
-}
-#cartImg
-{
-	margin-left: 5px;
-	max-width: 35px;
-	max-height: 35px;
-	margin-top: 10px;
-}
-#banner
-{
-	max-height: 300px;
-	max-width: 200px;
-}
-
-.sideMenu 
-{
-  	padding: 0;
-  	width: 200px;
-  	background-color: #e6f9ff;
-  	position: fixed;
-}
-.sideMenu a 
-{
-  	display: block;
-  	color: black;
-  	padding: 16px;
-  	text-decoration: none;
-}
-.sideMenu a.active 
-{
-  	background-color: cyan;
-	color: blue;
-}
-.sideMenu a:hover:not(.active) 
-{
-	background-color: #b3e6ff;
-	text-decoration: underline;
-  	color: blue;
-}
-
-#sectionHeading
-{
-	font-family: 'Courgette', cursive;
-	margin-top: 60px;
-}
-
-#image
+#owner-image
 {
    max-width: 100%;
    height: auto;
 }
-        
-#about-info
-{
-   text-align: left;
-   width: 100%;
-   height: auto;
-   background-color: rgb(230, 245, 255);
-}
-          
-strong { color: rgb(0, 143, 179); }
-      
-a { color: purple; }
-      
-a:hover
-{
-    text-decoration: none;
-    color: blue;
-}
-      
+
+/* Greeting Message styles */
 .blockquote
 {
     background-color: rgb(179, 209, 255);
     border-radius: 1%;
-    width: 100%;
+    width: 78%;
     height: auto;
-    padding: 10px 5px 10px 5px;
-    text-align: left;
-}
-      
-#etsy-site { padding: 10px 5px 10px; }
-
-div.pageContent
-{
-	margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-@media screen and (max-width: 700px) 
+/* Biography Section styles */
+#about-info
 {
-  	.sideMenu
-  	{
-    	width: 100%;
-    	height: auto;
-   		position: relative;
-   		margin-top: 0;
- 	}
-  				
-  	div.pageContent {margin-left: 30px}
+   text-align: left;
+   width: 78%;
+   height: auto;
+   background-color: rgb(230, 245, 255);
+}            
+#contact-info 
+  { padding: 10px 30px 20px; }
+#contact-link
+{ 
+  color: purple;
+  text-decoration: none;
+}
+#contact-link:hover
+  { text-decoration: underline; }
 
-  	#banner { display: none; }
+/* Biography Pargraph styles */
+#about-shop 
+  { padding: 0px 30px 20px 30px; }
 
-    #header
-    {
-		background-color: rgb(0, 230, 230);
-		position: fixed;
-		width: 100%;
-	}
+#about-jeweler 
+  { padding: 0px 30px 20px 30px; }
 
-  	#navbar
-	{
-		position: relative;
-		background-image: linear-gradient(#80dfff, #0086b3);
-		width: 100%;
-		max-height: 60px;
-		margin-left: 0;
-	}
-	#navbar a
-	{
-		text-decoration: none;
-		color: white;
-		padding: 1rem;
-		margin-right: 1rem;
-	}
-	#navbar a:hover
-	{
-		background-color: cyan;
-		color: blue;
-	}
+/* For mobile-friendly viewing */
+@media screen and (max-width: 600px) 
+{
+  #owner-image
+    { width: 80%; }
 
+  .pageContent
+    { margin-top: 40px; }
+
+  #img-caption
+    { width: 80%; }
 }
