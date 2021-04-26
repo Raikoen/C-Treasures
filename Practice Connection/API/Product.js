@@ -3,8 +3,32 @@ const express = require('express');
 const Product = require('../DBConnection/Product');
 const route = express.Router();
 const path = require('path');
-const { error } = require('console');
 
+route.get('/:productSKU', (req, res, next)=>{
+
+    const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
+    console.log(productId);
+    if(productId){
+        Product.findOne({ productName : productId}, function(err, product){
+            if(err){
+                next(new Error("Couldn't find product: " + err));
+                return;
+            }
+                
+            req.product = product;
+            next();
+        })
+    } else {
+        next();
+    }
+    
+}, function(req, res, next){
+    if(req.product == null){
+        next();
+        return;
+    }
+    res.render("ProductPage", {productObject : req.product});
+});
 
 route.get('/get', async (req,res)=>{
 
@@ -18,21 +42,6 @@ route.get('/about', async (req,res)=>{
     res.render('About');
     
 });
-
-route.get('/:productSKU', async(req, res)=>{
-
-    try {
-        const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
-        const product = await Product.findOne({ productName : productId});
-        res.render("ProductPage", {productObject : product});
-      } catch(e) {  // 3. Handled
-        console.error("an error occured");
-      }
-
-  
-    
-});
-
 
 
 route.post('/', async (req,res)=>{
