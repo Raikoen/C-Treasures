@@ -1,0 +1,146 @@
+
+<html>
+	<head>
+		<title>Shop</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="Shop_Styles.css">
+    <link rel="stylesheet" href="Navigation_Styles.css">
+	</head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    body
+    {
+        font-family: 'Noto Sans', sans-serif;
+        margin-top: 0;
+    }
+  </style>
+
+	<body>
+    <!-- Top Nav Menu -->
+		<div>
+      <nav class="topMenu">
+        <a href="shop.html">Shop</a>
+        <a href="About.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+        <a class = "active" href="cart.html"><img id="cart-icon" src="Cart_Icon.png"></a>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin-top: 8px" type="submit"><img id="search-icon" src="Search_Icon.png"/></button>
+            </form>
+          </div>
+      </nav>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="sideMenu">
+      <img id="banner-image" src="banner.jpg"/>
+      <a class="dropDownBtn">Products <img id="menu-icon" src="MobileMenuIcon.png"/></a>
+
+      <div class="dropDownMenu">
+        <a class="active" href="#">All Products</a>
+        <a href="#">Bracelets</a>
+        <a href="#">Earrings</a>
+          <a href="#">Pendants</a>
+          <a href="#">Loom Patterns</a>
+      </div>
+    </div>
+
+    <script>
+      /*  Used to hide or show side menu options */
+      var dropDownMenu = document.getElementsByClassName("dropDownBtn");
+      var i;
+
+      for (i = 0; i < dropDownMenu.length; i++)
+      {
+          dropDownMenu[i].addEventListener("click", function()
+          {
+            this.classList.toggle("active");
+            var menuOptions = this.nextElementSibling;
+            if (menuOptions.style.display === "block")
+            {
+              menuOptions.style.display = "none";
+            }
+            else
+            {
+              menuOptions.style.display = "block";
+            }
+          });
+      }
+    </script>
+
+
+
+
+
+<!--Citations for cart.html-->
+<!--For this page, inspiration used is: https://www.w3schools.com/howto/howto_css_checkout_form.asp-->
+<!-- and https://codepen.io/justinklemm/pen/zAdoJ (Used this to help with my css positioning and grid-like structure)-->
+ <!--Plans for page: get a script to work (No PHP) can edit and remove items from cart and have this page link to the shop page-->
+
+
+
+
+<html>
+<head>
+		<script src="cart.js"></script>
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+
+<body>
+  <main>
+
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+
+        </ul>
+
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="https://i.etsystatic.com/6714821/c/1834/1456/0/685/il/a4a54c/1224896936/il_340x270.1224896936_yivt.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong>Jasper Dangle Earrings</strong></h1>
+
+
+          </div>
+        </div>
+        <div class="price">$24.00</div>
+        <div class="quantity">
+
+        </div>
+
+        <div class="remove">
+          <button>Remove</button>
+        </div>
+
+
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> <h3>Cart Summary</h3> </div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Total + Shipping: </div>
+          <div class="subtotal-value final-value" id="basket-subtotal">$24.00</div>
+
+
+        </div>
+          <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">$24.00</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">Go to Secure Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+
+</html>
