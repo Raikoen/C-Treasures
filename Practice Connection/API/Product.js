@@ -4,7 +4,7 @@ const Product = require('../DBConnection/Product');
 const route = express.Router();
 const path = require('path');
 
-route.get('/:productSKU', (req, res, next)=>{
+route.get('/item/:productSKU', (req, res, next)=>{
 
     const productId = req.params.productSKU.substr(1,req.params.productSKU.length);
     console.log(productId);
@@ -43,6 +43,23 @@ route.get('/about', async (req,res)=>{
     
 });
 
+route.get('/events', async (req,res)=>{
+
+    res.render('events');
+    
+});
+
+route.get('/cart', async (req,res)=>{
+
+    res.render('cart');
+    
+});
+
+route.get('/contact', async (req,res)=>{
+
+    res.render('contact');
+    
+});
 
 route.post('/', async (req,res)=>{
 

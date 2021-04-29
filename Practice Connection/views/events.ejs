@@ -1,0 +1,86 @@
+
+<!--Citations for events.html-->
+<!--https://support.google.com/calendar/answer/41207?hl=en
+Google calendar displays events that are linked to a Google account,
+easy maintenance for Carri to add events she is attending & give details
+-->
+
+
+
+<html>
+	<head>
+		<title>Shop</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/Shop_Styles.css">
+    <link rel="stylesheet" href="/Navigation_Styles.css">
+	</head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    body
+    {
+        font-family: 'Noto Sans', sans-serif;
+        margin-top: 0;
+    }
+  </style>
+
+	<body>
+    <!-- Top Nav Menu -->
+		<div>
+      <nav class="topMenu">
+			  <a href="Shop.html">Shop</a>
+        <a href="About.html">About</a>
+        <a class="events.html" href="#">Events</a>
+        <a href="Contact.html">Contact</a>
+        <a href="cart.html"><img id="cart-icon" src="Cart_Icon.png"></a>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin-top: 8px" type="submit"><img id="search-icon" src="Search_Icon.png"/></button>
+            </form>
+          </div>
+      </nav>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="sideMenu">
+      <img id="banner-image" src="banner.jpg"/>
+      <a class="dropDownBtn">Products <img id="menu-icon" src="MobileMenuIcon.png"/></a>
+
+      <div class="dropDownMenu">
+        <a class="active" href="#">All Products</a>
+        <a href="#">Bracelets</a>
+        <a href="#">Earrings</a>
+          <a href="#">Pendants</a>
+          <a href="#">Loom Patterns</a>
+      </div>
+    </div>
+
+    <script>
+      /*  Used to hide or show side menu options */
+      var dropDownMenu = document.getElementsByClassName("dropDownBtn");
+      var i;
+
+      for (i = 0; i < dropDownMenu.length; i++)
+      {
+          dropDownMenu[i].addEventListener("click", function()
+          {
+            this.classList.toggle("active");
+            var menuOptions = this.nextElementSibling;
+            if (menuOptions.style.display === "block")
+            {
+              menuOptions.style.display = "none";
+            }
+            else
+            {
+              menuOptions.style.display = "block";
+            }
+          });
+      }
+    </script>
+
+<div id="contentframe" style="position:relative; top: 160px; left: 600px;">
+ <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=ZGFyZWRldmlsNDU0NjJAZ21haWwuY29t&amp;src=N2NiajdkcmsycG9lamdibWxvbTA4cW1jOXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=dDFncHM0OG8xMzllMzk4cjhtM2JsamI4azRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=aWR0Zm8wNTI1ZGQ5djNsam9mNnBvY3UxYmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZzlrZW5pdGVjb25kYXFnMDJzZW1oZzdudWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%237986CB&amp;color=%23D50000&amp;color=%2333B679&amp;color=%23E67C73&amp;color=%23B39DDB&amp;color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</iframe></div>

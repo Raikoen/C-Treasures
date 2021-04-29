@@ -394,7 +394,7 @@ img {vertical-align: middle;}
 			<nav id="navbar">
 				
 				<a class="nav-link" href="#">Home</a>
-				<a class="nav-link" href="About.html">About</a>
+				<a class="nav-link" href="/About.html">About</a>
 				<a class="nav-link" href="#">Events</a>
 				<a class="nav-link" href="#">Contact</a>
 				
@@ -530,7 +530,7 @@ function showSlides() {
 			
 			<div class="product-card">
 				<div class="product-image">
-					<a href = ":<%=productObject[result].productName%>"><img class="categories" src= <%=productObject[result].productPicture%>></a>
+					<a href = "http://localhost:3000/api/productModel/item/:<%=productObject[result].productName%>"><img class="categories" src= <%=productObject[result].productPicture%>></a>
 				</div>
 				<div class = "product-info">
 		  			<h5><%=productObject[result].productName%></h5>    
