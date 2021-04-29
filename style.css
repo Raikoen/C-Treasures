@@ -1,9 +1,25 @@
+/*
+Style sheet for contact.html
+https://www.w3schools.com/cssref/css_units.asp
+https://www.w3schools.com/howto/howto_css_contact_form.asp
+https://contactform7.com/styling-contact-form/
+https://www.freecodecamp.org/news/how-to-create-a-contact-form-with-css/
+https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
+  Gave resources for style pages and how to use them for your contact page
+*/
+
+
+
+
+
+
+
 body {
   margin: 7em;
 
 }
 aside {
-    background: #e64d00; /* same color as selected state on site menu */
+    background: #e64d00; 
     padding: 0.4em 1em;
     border-radius: 3px;
     color: #fff;
