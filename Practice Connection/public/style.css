@@ -1,0 +1,84 @@
+/*
+Style sheet for contact.html
+https://www.w3schools.com/cssref/css_units.asp
+https://www.w3schools.com/howto/howto_css_contact_form.asp
+https://contactform7.com/styling-contact-form/
+https://www.freecodecamp.org/news/how-to-create-a-contact-form-with-css/
+https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
+  Gave resources for style pages and how to use them for your contact page
+*/
+
+
+
+
+
+
+
+body {
+  margin: 7em;
+
+}
+aside {
+    background: #e64d00; 
+    padding: 0.4em 1em;
+    border-radius: 3px;
+    color: #fff;
+    margin-bottom: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+
+
+}
+textarea {
+  width: 100%;
+}
+.content-head {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1em;
+
+
+}
+.is-center {
+  text-align: center;
+}
+.button-success {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #e6c000;
+}
+.button-xlarge {
+  font-size: 100%;
+}
+button {
+  float: right;
+}
+#name, #message {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#email{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+label{
+    position: absolute;
+    left: 15%;
+}
+
+
+.thankyou_message{
+  position: absolute;
+  left: 25%;
+}

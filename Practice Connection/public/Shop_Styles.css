@@ -1,0 +1,90 @@
+/*
+	Author: Kyle Christian Cole
+	Document: Shop_Styles.css
+	Project: C-Treasures
+	Course: COMP 424 - Client-Side Web Design
+*/
+
+/* Overall page styles */
+div.pageContent
+{
+	margin-left: 200px;
+  	padding: 50px 16px;
+  	height: 1000px;
+  	width: 78%;
+}
+
+/* Animate product images */
+.products:hover 
+	{ transform: translateY(8px); }
+
+/* Drop-down sort menu styles */
+.product-filter 
+	{ display: flex; }
+.product-filter h1 
+	{ flex-grow: 1; }
+.sort-menu 
+{
+  	display: flex;
+  	flex-direction: column;
+}
+
+/* Product Image Display styles */
+.product-gallery
+{
+  	display: flex;
+  	flex-wrap: wrap;
+}
+.product-card 
+	
+{ 
+	max-width: 200px;
+	flex: 1 16%; 
+}
+.product-image img 
+{
+	padding: 8px;
+  	max-width: 100%;
+}
+.product-info 
+{
+  	margin-left: 10px;
+  	margin-top: auto;
+}
+
+/* Allows for spaces in between product images */
+* { box-sizing: border-box; }
+
+/* For mobile-friendly viewing */
+@media (max-width: 920px) 
+{
+	.product-card { flex: 1 21%; }
+}
+
+@media (max-width: 600px) 
+{
+  div.pageContent 
+  { 
+  	margin-left: 20px; 
+  	margin-top: -30px;
+  	width: 88%;
+  }
+
+  .product-card 
+  	{ flex: 1 55%; }
+  h1
+  	{ text-align: center; }
+
+}
+
+@media (max-width: 480px) 
+{
+  .product-filter { flex-direction: column; }
+  .sort { align-self: flex-start; }
+}
+
+@media (max-width: 480px) 
+{
+  .product-filter { flex-direction: column; }
+ 
+}

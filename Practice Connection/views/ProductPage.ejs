@@ -31,82 +31,112 @@
 		<title>Red, White, & Black Loom Bracelet</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/ProductPage_Styles.css">
+		<link rel="stylesheet" href="/Navigation_Styles.css">
 	</head>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+		body
+		{
+			margin-top: 0;
+			font-family: 'Noto Sans', sans-serif;
+		}
+	</style>
 	
 	<body>
-		<div>
-			<nav id="navbar">
-				<a class="nav-link" href="../get">Home</a>
-				<a class="nav-link" href="../about">About</a>
-				<a class="nav-link" href="#">Events</a>
-				<a class="nav-link" href="#">Contact</a>
 
-				<div class="search-bar">
-    				<form>
-      					<input type="text" placeholder="Search.." name="search">
-      					<button style="margin-top: 8px" type="submit"><i class="fa fa-search"><img id="Search_Btn" src="/Search_Icon.png"/></i></button>
-    				</form>
-  				</div>
+	<div> 
+	<!-- Top Nav Menu -->
+      <nav class="topMenu">
+        <a href="../get">Shop</a>
+        <a href="../about">About</a>
+        <a href="../events">Events</a>
+        <a href="../contact">Contact</a>
+        <a href="../cart"><img id="cart-icon" src="/Cart_Icon.png"></a>
 
-  		
-   				<a href="cart.html"><img src="/Cart_Icon.png" id="cartImg" /></a>
-			</nav>
-		</div>
-		<div class="sideMenu">
-			<img id="banner" src="/banner.jpg"/>
-			<a style="font-size: 1.5rem; font-weight: bold; background-color: #33ccff;
- 				color: white; text-decoration: none" >Shop</a>
-			<a class="active" href="#">All Products</a>
-  			<a class="productList" href="#">Bracelets</a>
-  			<a class="productList" href="#">Earrings</a>
-  			<a class="productList" href="#">Pendants</a>
-  			<a class="productList" href="#">Loom Patterns</a>
-		</div>
-
-
-
-	<div class="pageContent">
-		<main class="container">
- 
-  <!-- Left Column / Headphones Image -->
-  <div class="left-column">
-   <img id="productImage" src= "<%=productObject.productPicture%>" >
-  </div>
- 
- 
-  <!-- Right Column -->
-  <div class="right-column">
- 
-    <!-- Product Description -->
-    <div class="product-description">
-      <h1> <%=productObject.productName%> </h1>
-
-      <!-- Product Pricing -->
-    <div class="product-price">
-      <span>$<%=productObject.productPrice%>.00</span>
-      <a href="cart.html" class="cart-btn">Add to cart</a>
+       <!-- Search Bar -->
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin-top: 8px" type="submit"><img id="search-icon" src="/Search_Icon.png"/></button>
+            </form>
+          </div>  
+      </nav>
     </div>
-
-      <p>
-        <ul>
-          <li>Description: <%=productObject.productDescription%></li>
-          <li>Details: <%=productObject.productDetails%></li>
-          <li>Color: <%=productObject.productColor%></li>
-          <li>Type: <%=productObject.productName%></li>
-        </ul> 
-
-      </p>
-    </div>
- 
+    <!-- Side Menu -->
+    <div class="sideMenu">
+      <img id="banner-image" src="/banner.jpg"/>
+      <a class="dropDownBtn">Products <img id="menu-icon" src="/MobileMenuIcon.png"/></a>
     
-  </div>
-</main>
-<!--
-			<footer id="footer">
-				<p id="copyright">&copy; Kyle Cole, June 2020</p>
-			</footer>
-		-->
+      <div class="dropDownMenu">
+        <a href="#">All Products</a>
+        <a href="#">Bracelets</a>
+        <a href="#">Earrings</a>
+        <a href="#">Pendants</a>
+        <a href="#">Loom Patterns</a>
+      </div>
+    </div>
 
+    <script>
+      /*  Used to hide or show side menu options */
+      var dropDownMenu = document.getElementsByClassName("dropDownBtn");
+      var i;
+
+      for (i = 0; i < dropDownMenu.length; i++) 
+      {
+          dropDownMenu[i].addEventListener("click", function() 
+          {
+            this.classList.toggle("active");
+            var menuOptions = this.nextElementSibling;
+            if (menuOptions.style.display === "block") 
+            {
+              menuOptions.style.display = "none";
+            }
+            else 
+            {
+              menuOptions.style.display = "block";
+            }
+          });
+      }
+    </script>
+	
+	<!-- Main Content -->
+	<div class="pageContent">
+
+		<!-- Product Information -->
+		<main class="product-container">
+
+			<!-- Product Image -->
+  			<div class="image-container">
+   				<img id="product-image" src="https://i.etsystatic.com/6714821/d/il/d8aa4e/1280904667/il_340x270.1280904667_am1y.jpg?version=0">
+  			</div>
+ 
+  			<div class="product-info">
+ 				<!-- Product Description -->
+    			<div class="product-description">
+      				<h1>Red, White, & Black Loom Bracelet</h1>
+
+      				<!-- Product Price -->
+    				<div class="product-price">
+						<span>$<%=productObject.productPrice%>.00</span>
+						<a href="cart.html" class="cart-btn">Add to cart</a>
+					  </div>
+				  
+						<p>
+						  <ul>
+							<li>Description: <%=productObject.productDescription%></li>
+							<li>Details: <%=productObject.productDetails%></li>
+							<li>Color: <%=productObject.productColor%></li>
+							<li>Type: <%=productObject.productName%></li>
+						  </ul> 
+				  
+						</p>
+					  </div>
+				   
+
+  		</div>
+		</main>
 	</div>
 	</body>
 </html>

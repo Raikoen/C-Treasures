@@ -7,6 +7,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+.product-card
+{
+	max-width: 200px;
+}
+
 body
 {
 	margin: 0;
