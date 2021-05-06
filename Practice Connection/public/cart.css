@@ -172,6 +172,7 @@ li.subtotal:before {
 
 .product-image {
   width: 35%;
+  left: 200px;
 }
 
 .product-details {

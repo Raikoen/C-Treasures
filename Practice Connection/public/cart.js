@@ -44,4 +44,6 @@ function removeItem(removeButton)
     productRow.remove();
     recalculateCart();
   });
+  
+
 }

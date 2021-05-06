@@ -7,11 +7,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-.product-card
-{
-	max-width: 200px;
-}
-
 body
 {
 	margin: 0;
@@ -127,6 +122,11 @@ div.pageContent
 
 * { box-sizing: border-box; }
 
+#product-image
+{
+	max-width: 400px;
+	margin-top: 80px; 
+}
  
 .container 
 {

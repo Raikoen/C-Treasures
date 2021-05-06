@@ -11,6 +11,11 @@ C-Treasures is an e-commerce website template written in HTML, CSS, and JavaScri
 
 ## Installation
 Web browser & Node.js 
+Node.js - v14.15.4
+Node Package Manager (npm) - 6.14.10
+
+## Testing
+Postman
 
 
 

@@ -23,10 +23,10 @@ route.get('/item/:productSKU', (req, res, next)=>{
     }
     
 }, function(req, res, next){
-    if(req.product == null){
-        next();
-        return;
-    }
+   // if(req.product == null){
+    //    next();
+    //    return;
+    //}
     res.render("ProductPage", {productObject : req.product});
 });
 
