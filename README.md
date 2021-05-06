@@ -1,7 +1,13 @@
 # C-Treasures
 E-commerce website project for COMP 424
 
-// This is where we should include a discription of the project and possibly have author names.
-// We should also include technologies that we use such as HTML5, CSS, MongoDB, JavaScript etc...
-// Added changes
-// Added changes
+Contributors: Kyle Cole, Angelica Hussar, and Steven Carpenter
+
+C-Treasures is an e-commerce website template written in HTML, CSS, and JavaScript. This project is meant to provide Kyle's mother with an idea of how her website could look. Kyle's mother had asked him to create an e-commerce website for her to sell her jewelery on. 
+
+#Installation
+Any web browser
+node.js 
+
+
+
